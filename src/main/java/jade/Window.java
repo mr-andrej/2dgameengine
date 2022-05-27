@@ -71,6 +71,11 @@ public class Window {
             throw new IllegalStateException("Failed to create the GLFW window.");
         }
 
+        // Callbacks setup
+        glfwSetCursorPosCallback(glfwWindow, MouseListener::mousePosCallback); // Note to self -> :: is a lambda function, like " x -> x + 2"
+        glfwSetMouseButtonCallback(glfwWindow, MouseListener::mouseButtonCallback);
+        glfwSetScrollCallback(glfwWindow, MouseListener::mouseScrollCallback);
+
         // Make the OpenGL context current
         glfwMakeContextCurrent(glfwWindow);
         // Enable v-sync -> No wait time between the frames since we provided "1"
