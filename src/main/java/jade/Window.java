@@ -75,6 +75,7 @@ public class Window {
         glfwSetCursorPosCallback(glfwWindow, MouseListener::mousePosCallback); // Note to self -> :: is a lambda function, like " x -> x + 2"
         glfwSetMouseButtonCallback(glfwWindow, MouseListener::mouseButtonCallback);
         glfwSetScrollCallback(glfwWindow, MouseListener::mouseScrollCallback);
+        glfwSetKeyCallback(glfwWindow, KeyListener::keyCallback);
 
         // Make the OpenGL context current
         glfwMakeContextCurrent(glfwWindow);
